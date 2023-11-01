@@ -7,7 +7,7 @@ enc = 'utf-8'
 with open("movies.txt", "r", encoding=enc) as data:
     list = data.readlines()
 while choice != "q":
-    print("Menu options: \n q: quit \n list: list all movies \n sn: search movie names")
+    print("Menu options: \n q: quit \n list: list all movies \n sn: search movie names \n sc: search casts")
     choice = input()
     if choice =="q":
         print("exiting menu")
@@ -27,3 +27,24 @@ while choice != "q":
                 if word.lower() in line.lower():
                     print(line, end="");
             row_idy += 1
+    elif choice == "sc":
+        print("Enter a word to search:")
+        word = input()
+        row_idz = 0
+        castlist= []
+        count = 0
+        for line in list:
+            if row_idz%3==0:
+                temp = line
+
+            if row_idz%3==1:
+                cast = line.rstrip().split(",")
+                for name in cast:
+                    if word.lower() in name.lower():
+                        castlist.append(name)
+                        count+=1
+                        print(temp, end="")
+                        print(castlist)
+            if row_idz%3==2:
+                temp = ""
+            row_idz +=1
