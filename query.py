@@ -3,8 +3,8 @@ from movies import Movies
 movies = Movies('./movies.txt')
 
 choice = ""
-enc = 'utf-8'
-with open("movies.txt", "r", encoding=enc) as data:
+
+with open("movies.txt", "r", encoding='utf-8') as data:
     list = data.readlines()
 while choice != "q":
     print("Menu options: \n q: quit \n list: list all movies \n sn: search movie names \n sc: search casts")
