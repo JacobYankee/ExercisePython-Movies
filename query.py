@@ -46,5 +46,6 @@ while choice != "q":
                         print(temp, end="")
                         print(castlist)
             if row_idz%3==2:
+                castlist.clear()
                 temp = ""
             row_idz +=1
